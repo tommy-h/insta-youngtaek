@@ -1,7 +1,11 @@
 <h1>Edit post</h1>
 
-<form action="/posts/<%= @post.id %>" method="post">
-  <input type="hidden" name="_method" value="put">
-  Content: <input type="text" name="content" value="<%= @post.content %>"><br>
-  <input type="submit" value="Save">
-</form>
+<%= form_for(@post) do |f| %>
+
+  Image: <%= f.file_field :image %>
+  <!--<input type="file" name="image"><br>-->
+  Content: <%= f.text_field :content %>
+  <!--<input type="text" name="content"><br>-->
+  <%= f.submit "Save" %>
+  
+<% end %>

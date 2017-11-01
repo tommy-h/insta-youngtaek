@@ -1,6 +1,17 @@
 <h1>New post</h1>
 
-<form action="/posts" method="post">
-  Content: <input type="text" name="content"><br>
-  <input type="submit" value="Save">
-</form>
+<%= form_for(@post) do |f| %>
+
+  Image: <%= f.file_field :image %>
+  <!--<input type="file" name="image"><br>-->
+  Content: <%= f.text_field :content %>
+  <!--<input type="text" name="content"><br>-->
+  <%= f.submit "Save" %>
+  
+<% end %>
+
+<!--<form action="/posts" method="post" enctype='multipart/form-data'>-->
+<!--  Image: <input type="file" name="image"><br>-->
+<!--  Content: <input type="text" name="content"><br>-->
+<!--  <input type="submit" value="Save">-->
+<!--</form>-->

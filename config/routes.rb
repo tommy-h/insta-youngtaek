@@ -1,12 +1,17 @@
 Rails.application.routes.draw do
+  devise_for :users
   # RESTful
-  get 'posts' => 'posts#index'
-  get 'posts/new' => 'posts#new'
-  get 'posts/:id' => 'posts#show'
-  post 'posts' => 'posts#create'
-  get 'posts/:id/edit' => 'posts#edit'
-  put 'posts/:id' => 'posts#update'
-  
+  # get 'posts' => 'posts#index'
+  # get 'posts/new' => 'posts#new'
+  # get 'posts/:id' => 'posts#show'
+  # post 'posts' => 'posts#create'
+  # get 'posts/:id/edit' => 'posts#edit'
+  # put 'posts/:id' => 'posts#update'
+  # delete 'posts/:id' => 'posts#destroy'
+  root 'posts#index'
+  # ctrl+/ 하면 한꺼번에 주석처리됨.
+   get 'mypage' => 'posts#mypage', as: :mypage #=> mypage_path
+   resources :posts # CRLD를 한번에 만들어 주는것!
   
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

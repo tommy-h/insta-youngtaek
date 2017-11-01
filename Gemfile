@@ -1,5 +1,12 @@
 source 'https://rubygems.org'
 
+gem 'fog' # aws
+gem 'carrierwave' # image 업로드
+gem 'figaro' # key 관리이 키가 공공장소에 노출되지 않도록. 패스워드나 토큰같은걸 한번에 관리해서 이 프론트 내에서 적절하게 사용하게 해주는 것
+gem 'mini_magick' # image 편집 (image magick)
+gem 'bootstrap'
+gem 'devise' # login 기능
+
 gem 'rails_db'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.5'
