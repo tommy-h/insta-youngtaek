@@ -11,8 +11,9 @@ Rails.application.routes.draw do
   root 'posts#index'
   # ctrl+/ 하면 한꺼번에 주석처리됨.
    get 'mypage' => 'posts#mypage', as: :mypage #=> mypage_path
-   resources :posts # CRLD를 한번에 만들어 주는것!
-  
+   resources :posts do # CRLD를 한번에 만들어 주는것!
+      resources :comments, only:[:create, :destroy]
+  end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

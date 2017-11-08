@@ -1,12 +1,17 @@
 
 <div class="container">
 
-  <h1>김인여어어어어어어어엉택</h1>
-  <p>김인영택</p>
+  <h1 style="color:#86af49; font-size: 100px; font-weight: 700">해커톤 3팀</h1>
+  <p style="color:#b5e7a0; font-size: 50px; font-weight:400">Hack Your Life</p>
 
+  <p>
+  <span>
   <% if user_signed_in? %>
     <%=link_to("New",new_post_path)%>
   <% end %>
+  </span>
+  </p>
+
   
   <div class="row">
     <% @posts.each do |post| %>
@@ -17,7 +22,6 @@
           <!--<img src="<%= post.image.url %>" class="img-fluid">-->
         <% end %>
       </div>
-
     <% end %>
   </div>
 

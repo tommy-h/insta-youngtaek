@@ -7,7 +7,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>김인영택</title>
+  <title>updating...</title>
 
   <!-- Bootstrap core CSS -->
   <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -28,33 +28,16 @@
 <body id="page-top">
 
    <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
-      <div class="container">
-        <a class="navbar-brand js-scroll-trigger" href="#page-top"></a>
-        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-          Menu
-          <i class="fa fa-bars"></i>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarResponsive">
-          <ul class="navbar-nav ml-auto">
-            <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#회원가입">회원가입</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#카트">카트</a>
-            </li>
-            <li class="nav-item">
+            
               <% if user_signed_in? %>
                 <%= current_user.email %> | <%= link_to "my page", mypage_path %> |
                 <%= link_to "로그아웃" , destroy_user_session_path, method: :delete, class:"nav-link js-scroll-trigger" %>
               <% else %>
                 <%= link_to "로그인" , new_user_session_path, class:"nav-link js-scroll-trigger" %>
               <% end %>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
+                    <%=link_to("Home",root_path)%>
+   
+
 <%= yield %>
 
 </body>

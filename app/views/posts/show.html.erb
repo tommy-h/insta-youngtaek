@@ -10,7 +10,25 @@
     <%= @post.content %>
   </p>
 </div>
-<!--method : delete뒤에 class 또는 style 넣어서 추가시킬수도있음.-->
-<!--1.어떤게 표시될지 2.어디로 갈지 3.어떤 방법으로-->
-<!--ctrl+/는 html에서 주석 다는 방법-->
-<!--delete는 일반적인 링크 페이지와 다르다. 일반적인 링크 페이지는 옮겨다니는데 사용하는데 딜리트는 삭제하는 동작이 들어가는 아이여서 다른 방법으로 링크 생성 -->
+
+<ul>
+  <% @post.comments.each do |comment| %>
+  <li>
+    <b><%= comment.user.email %></b> : <%= comment.content %>
+    <% if current_user == comment.user %>
+    - <%= link_to "Delete", [@post, comment], method: :delete %>
+    <% end %>
+  </li>
+  <% end %>
+</ul>
+
+<% if user_signed_in? %>
+<div>
+  <%= form_for([@post, @comment]) do |f| %>
+    <!--<input type="file" name="image"><br>-->
+    Comment: <%= f.text_field :content %>
+    <!--<input type="text" name="content"><br>-->
+    <%= f.submit "Save" %>
+  <% end %>
+</div>  
+<% end %>
